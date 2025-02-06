@@ -1,0 +1,6 @@
+.article-page__picture {
+  width: 1208px;
+  height: 680px;
+  object-fit: cover;
+  position: static;
+}

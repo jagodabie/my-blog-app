@@ -1,0 +1,58 @@
+.app-header {
+  display: flex;
+  margin: 1rem 0;
+  height: 58px;
+  color: var(--color-black);
+  font-family: var(--font-family-poppins);
+}
+
+.app-header__logo {
+  margin-right: 24px;
+}
+
+.app-header__title-container > * {
+  font-style: italic;
+  display: block;
+}
+
+.app-header__title {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: var(--font-weight-bold);
+}
+
+.app-header__title::first-letter {
+  color: var(--color-text-filter);
+}
+
+.app-header__subtitle {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: left;
+}
+
+.app-header__description {
+  width: 120px;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--color-text-secondary);
+  margin-left: 25px;
+  padding-left: 26px;
+  padding-top: 4px;
+  border-left: 1px solid var(--color-text-secondary);
+}
+
+.app-header__wrapper {
+  border-bottom: var(--gray-border-light);
+}
+
+.app-header-breadcrumbs {
+  display: block;
+  font-size: var(--font-size-extra-small);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-text-primary);
+  padding-top: 43px;
+  padding-bottom: 10px;
+}

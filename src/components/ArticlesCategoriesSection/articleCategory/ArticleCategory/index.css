@@ -1,0 +1,30 @@
+.article-category {
+  width: 370px;
+  height: 457px;
+}
+
+.article-category__image {
+  height: 230px;
+  width: 100%;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    border: var(--transparent-border) 0 0 0;
+    border-radius: 50px 0 0 0;
+  }
+}
+
+.article-category__title {
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.article-category__bottom {
+  height: calc(100% - 230px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: var(--transparent-border);
+  border-radius: 0 0 50px 0;
+}

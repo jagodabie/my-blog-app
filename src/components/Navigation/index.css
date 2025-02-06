@@ -1,0 +1,10 @@
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+}
+
+span {
+  display: block;
+}

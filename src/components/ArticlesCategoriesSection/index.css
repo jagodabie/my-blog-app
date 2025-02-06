@@ -1,0 +1,17 @@
+.articles-categories__container {
+  background-color: var(--color-bg-gray);
+}
+
+.articles-categories-header {
+  padding: 50px 0;
+}
+
+.articles-categories-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.articles-categories {
+  background-color: var(--color-bg-gray);
+}
