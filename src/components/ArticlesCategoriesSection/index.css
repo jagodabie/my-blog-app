@@ -3,9 +3,7 @@
 }
 
 .articles-categories-header {
-  padding: 50px 0;
-
-  /* mobile */
+  padding: 3.5rem 8rem 3rem;
 
   @media (max-width: 768px) {
     padding: 49px 50px 55px;
@@ -14,8 +12,13 @@
 
 .articles-categories-container {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 3rem;
+  justify-content: flex-start;
+  margin-left: 4rem;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .articles-categories {
@@ -23,6 +26,8 @@
 }
 
 .sort__text {
+  margin-left: 30px;
+  margin-top: -4px;
   @media (max-width: 768px) {
     font-size: 12px;
     font-weight: var(--font-weight-extra-bold);
@@ -30,11 +35,17 @@
 }
 
 .sort-filter {
+  margin-right: 322px;
+  margin-top: 42px;
+  margin-left: 20px;
+  display: flex;
   @media (max-width: 768px) {
     width: 100%;
     padding: 0 60px;
     font-weight: var(--font-weight-extra-bold);
     border-bottom: var(--gray-border-extra-light);
+    margin: 0;
+    display: block;
   }
 
   .filters__mobile {

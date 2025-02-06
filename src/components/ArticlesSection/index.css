@@ -1,11 +1,17 @@
 .articles-section {
   display: flex;
   flex-direction: column;
+  padding-bottom: 8rem;
 }
 
 .articles-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  gap: 59px;
+  padding-left: 8rem;
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    justify-content: center;
+  }
 }

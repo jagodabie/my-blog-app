@@ -11,27 +11,27 @@ export const FavoriteFilter = ({
 }: FavoriteFilterProps) => {
   return (
     <div
-      style={
-        category
-          ? { cursor: "pointer" }
-          : {
-              cursor: "not-allowed",
-            }
-      }
       className="favorite-filter"
+      style={{ cursor: category ? "pointer" : "not-allowed" }}
     >
       <span
         className={`filter__text ${!favorite ? "active" : ""}`}
-        onClick={() => setFavorite(false)}
+        onClick={() => {
+          if (category) setFavorite(false);
+        }}
+        style={{ cursor: category ? "pointer" : "not-allowed" }}
       >
         Wszystkie
       </span>
+
       <span className="filter-divider">/</span>
+
       <span
         className={`filter__text ${favorite ? "active" : ""}`}
         onClick={() => {
-          setFavorite(true);
+          if (category) setFavorite(true);
         }}
+        style={{ cursor: category ? "pointer" : "not-allowed" }}
       >
         Ulubione
       </span>

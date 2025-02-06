@@ -10,11 +10,9 @@ import { useArticles } from "@/hooks/useArticles";
 
 export const ArticlesSection = () => {
   const { category, favorite } = useFilters();
-  const {
-    data: articles,
-    loading,
-    error,
-  } = useArticles({ category, favorite });
+  const { data, loading, error } = useArticles({ category, favorite });
+
+  const articles = data as Article[];
 
   return (
     <div className="articles-section">
@@ -28,7 +26,7 @@ export const ArticlesSection = () => {
             <ArticleCard key={article.id} article={article} />
           ))
         ) : (
-          <div>No articles found</div>
+          <p>No articles found</p>
         )}
       </div>
     </div>
