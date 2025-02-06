@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
   --color-bg: #ffffff;
@@ -34,6 +35,7 @@
 
   --primary-border-dark: 1px solid #1e2c3b;
   --gray-border-light: 1px solid #ddd;
+  --gray-border-extra-light: 1px solid #e5e5e5;
   --gray-border: 1px solid #f4f4f4;
   --transparent-border: 1px solid transparent;
 }
@@ -41,7 +43,6 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
-  min-width: 100vw;
 }
 
 *,
@@ -58,7 +59,6 @@ body {
   color: var(--color-text-primary);
   background-color: #82e49a;
   min-height: 100vh;
-  min-width: 100vw;
 }
 
 h1,
@@ -102,4 +102,13 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+header {
+  padding: 8rem 8rem 0;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0 auto;
+  }
 }

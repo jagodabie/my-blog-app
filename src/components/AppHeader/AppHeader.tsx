@@ -16,15 +16,8 @@ export const AppHeader = () => {
           <h1 className="app-header__title">ACME</h1>
           <span className="app-header__subtitle">Institute</span>
         </div>
-        {!isMobile && (
-          <>
-            <div className="app-header__description">
-              FIKCYJNA INSTYTUCJA EDUKACYJNA
-            </div>
-            <span className="app-header-breadcrumbs"> - BLOG </span>
-          </>
-        )}
       </div>
+      {!isMobile && <span className="app-header-breadcrumbs"> - BLOG </span>}
     </div>
   );
 };

@@ -13,7 +13,7 @@ export const ArticlesCategories = () => {
 
   return (
     <div className="articles-categories">
-      <h2 className="articles-categories-header">Kategorie</h2>
+      {!isMobile && <h2 className="articles-categories-header">Wpisy</h2>}
       <div className="articles-categories-container">
         {isMobile ? (
           <Carousel categories={categories} />

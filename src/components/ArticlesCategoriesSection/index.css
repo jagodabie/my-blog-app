@@ -4,6 +4,12 @@
 
 .articles-categories-header {
   padding: 50px 0;
+
+  /* mobile */
+
+  @media (max-width: 768px) {
+    padding: 49px 50px 55px;
+  }
 }
 
 .articles-categories-container {
@@ -14,4 +20,29 @@
 
 .articles-categories {
   background-color: var(--color-bg-gray);
+}
+
+.sort__text {
+  @media (max-width: 768px) {
+    font-size: 12px;
+    font-weight: var(--font-weight-extra-bold);
+  }
+}
+
+.sort-filter {
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 60px;
+    font-weight: var(--font-weight-extra-bold);
+    border-bottom: var(--gray-border-extra-light);
+  }
+
+  .filters__mobile {
+    padding-bottom: 54px;
+    padding-left: 40px;
+  }
+}
+
+.favorite-filter .filter-divider {
+  margin-left: 40px;
 }

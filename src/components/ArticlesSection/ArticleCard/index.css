@@ -35,16 +35,35 @@ span {
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.article-card__see-more:hover .article-card__see-more-text {
+  transform: scale(1.05); /* Lekkie powiększenie czcionki */
+}
+
+.article-card__see-more:hover {
+  background: var(--gray-border);
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .article-card__see-more-icon {
   padding: 2px 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.article-card__see-more:hover .article-card__see-more-icon,
+.article-card__see-more:hover .article-card__see-more-text {
+  transform: scale(1.05);
+  opacity: 0.6;
 }
 
 .article-card__see-more {
   display: flex;
   align-items: center;
 }
+
 .article-card__date {
   font-family: var(--font-playfair);
   font-size: 19.47px;

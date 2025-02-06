@@ -5,7 +5,7 @@ import { categoryColorMap } from "@/lib";
 import Link from "next/link";
 
 export const ArticleCard = ({ article }: { article: Article }) => {
-  const { id, title, body, date, category } = article;
+  const { id, title, description, date, category } = article;
 
   return (
     <div className="article-card">
@@ -19,8 +19,8 @@ export const ArticleCard = ({ article }: { article: Article }) => {
       <span className="article-card__date">
         {date.split("-").reverse().join(".")}
       </span>
-      <p className="article-card__description">{body}</p>
-      <Link href={`/${id}`}>
+      <p className="article-card__description">{description}</p>
+      <Link href={`/${id}`} passHref>
         <div className="article-card__see-more">
           <span className="article-card__see-more-text">zobacz więcej</span>
           <span className="article-card__see-more-icon">

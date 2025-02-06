@@ -4,6 +4,13 @@
   width: fit-content;
 }
 
+button:disabled {
+  background-color: var(--color-bg);
+  color: var(--color-bg-gray);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .carousel {
   position: relative;
   display: flex;
@@ -80,5 +87,5 @@
 
 .carousel-dot.active {
   background-color: var(--color-text-primary);
-  transform: scale(1.3); /* Powiększenie aktywnej kropki */
+  transform: scale(1.3);
 }

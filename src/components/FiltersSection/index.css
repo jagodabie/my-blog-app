@@ -5,6 +5,7 @@
   text-decoration-style: solid;
   text-underline-offset: 25%;
   text-decoration-thickness: 20%;
+  font-weight: var(--font-weight-extra-bold);
 }
 
 .filters {
@@ -23,7 +24,14 @@
   cursor: auto;
   display: inline-block;
   padding: 0 5px;
+  color: var(--color-text-filter);
 }
+
+.filter__text {
+  font-family: var(--font-family-poppins);
+  font-weight: var(--font-weight-bold);
+}
+
 .category-filter {
   justify-content: space-between;
   display: flex;
@@ -44,6 +52,14 @@
   text-decoration-skip-ink: none;
 }
 
-.sort__text {
-  font-weight: var(--font-weight-extra-bold);
+.favorite-filter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+    margin-left: 30px;
+  }
 }

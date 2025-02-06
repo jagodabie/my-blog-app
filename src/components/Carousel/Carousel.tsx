@@ -48,6 +48,7 @@ export const Carousel = ({ categories }: CarouselProps) => {
         <button
           className="carousel__button left"
           onClick={() => scroll("left")}
+          disabled={activeIndex === 0}
         >
           ❮
         </button>
@@ -59,6 +60,7 @@ export const Carousel = ({ categories }: CarouselProps) => {
         <button
           className="carousel__button right"
           onClick={() => scroll("right")}
+          disabled={activeIndex === categories.length - 1}
         >
           ❯
         </button>
