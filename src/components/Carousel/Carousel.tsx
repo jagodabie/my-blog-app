@@ -3,6 +3,7 @@ import { ArticleCategory } from "../ArticlesCategoriesSection/articleCategory/Ar
 import { Category } from "@/lib";
 
 import "./index.css";
+
 type CarouselProps = {
   categories: Category[];
 };
@@ -15,21 +16,24 @@ export const Carousel = ({ categories }: CarouselProps) => {
     if (!carouselRef.current) return;
 
     const scrollAmount = carouselRef.current.offsetWidth;
-    if (direction === "left") {
-      carouselRef.current.scrollLeft -= scrollAmount;
-    } else {
-      carouselRef.current.scrollLeft += scrollAmount;
-    }
+    carouselRef.current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
 
-    const newIndex = direction === "left" ? activeIndex - 1 : activeIndex + 1;
-    setActiveIndex(Math.max(0, Math.min(newIndex, categories.length - 1)));
+    setActiveIndex((prev) =>
+      direction === "left"
+        ? Math.max(0, prev - 1)
+        : Math.min(prev + 1, categories.length - 1)
+    );
   };
 
   const goToSlide = (index: number) => {
     if (!carouselRef.current) return;
 
     const scrollAmount = index * carouselRef.current.offsetWidth;
-    carouselRef.current.scrollLeft = scrollAmount;
+    carouselRef.current.scrollTo({ left: scrollAmount, behavior: "smooth" });
+
     setActiveIndex(index);
   };
 
@@ -53,8 +57,8 @@ export const Carousel = ({ categories }: CarouselProps) => {
           ❮
         </button>
         <div className="carousel__track" ref={carouselRef}>
-          {categories.map((category, index) => (
-            <ArticleCategory key={index} {...category} />
+          {categories.map((category) => (
+            <ArticleCategory key={category.id} {...category} />
           ))}
         </div>
         <button
