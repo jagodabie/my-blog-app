@@ -2,12 +2,12 @@
 import { CloseIcon } from "@/assets/CloseIcon";
 import "./index.css";
 import { useFilters } from "@/providers/FiltersContext";
-import { useIsMobile } from "@/hooks/useScreenSize";
 import { FavoriteFilter } from "./components/FavoriteFilter";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 export const FiltersSection = () => {
   const { category, setCategory, favorite, setFavorite } = useFilters();
-  const { isMobile } = useIsMobile();
+  const { isMobile } = useScreenSize();
 
   return (
     <>

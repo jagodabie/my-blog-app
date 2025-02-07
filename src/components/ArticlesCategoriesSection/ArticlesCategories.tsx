@@ -4,18 +4,19 @@ import {
   ArticleCategoryProps,
 } from "./articleCategory/ArticleCategory/ArticleCategory";
 import { categories } from "@/lib";
-import { useIsMobile } from "@/hooks/useScreenSize";
+import { useScreenSize } from "@/hooks/useScreenSize";
 import { Carousel } from "../Carousel/Carousel";
 
 export const ArticlesCategories = () => {
-  const { isMobile } = useIsMobile();
-  console.log("isMobile", isMobile);
+  const { isSmallDesktop } = useScreenSize();
 
   return (
     <div className="articles-categories">
-      {!isMobile && <h2 className="articles-categories-header">Kategorie</h2>}
+      {!isSmallDesktop && (
+        <h2 className="articles-categories-header">Kategorie</h2>
+      )}
       <div className="articles-categories-container">
-        {isMobile ? (
+        {isSmallDesktop ? (
           <Carousel categories={categories} />
         ) : (
           <div className="articles-categories-container">

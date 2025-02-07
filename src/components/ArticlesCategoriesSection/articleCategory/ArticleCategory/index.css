@@ -1,6 +1,9 @@
 .article-category {
-  width: 370px;
-  height: 457px;
+  /* width: 370px;
+  height: 457px; */
+
+  width: clamp(220px, 20vw, 370px);
+  height: clamp(340px, 24vw, 457px);
 }
 
 .article-category__image {

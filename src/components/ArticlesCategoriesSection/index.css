@@ -12,11 +12,11 @@
 
 .articles-categories-container {
   display: flex;
-  gap: 3rem;
   justify-content: flex-start;
-  margin-left: 4rem;
+  margin-left: clamp(0rem, 2vw, 4rem);
+  gap: clamp(0.5rem, 3vw, 3rem);
 
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     margin-left: 0;
   }
 }

@@ -1,5 +1,4 @@
 "use client";
-
 import { JSX } from "react";
 import { useFilters } from "@/providers/FiltersContext";
 

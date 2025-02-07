@@ -1,11 +1,11 @@
 "use client";
 import { AppIcon } from "@/assets/AppIcon";
-import { useIsMobile } from "@/hooks/useScreenSize";
 
 import "./index.css";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 export const AppHeader = () => {
-  const { isMobile } = useIsMobile();
+  const { isMobile } = useScreenSize();
   return (
     <div className="app-header__wrapper">
       <div className="app-header">
