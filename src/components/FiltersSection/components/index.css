@@ -1,0 +1,36 @@
+.favorite-filter {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.filter__text {
+  font-family: var(--font-family-poppins);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter__text--active {
+  color: var(--color-text-filter);
+  text-decoration: underline solid 20%;
+  text-underline-offset: 25%;
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.filter-divider {
+  cursor: auto;
+  padding: 0 5px;
+  color: var(--color-text-filter);
+  margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .filter-divider {
+    margin-left: 0;
+  }
+}

@@ -1,3 +1,5 @@
+import "./index.css";
+
 type FavoriteFilterProps = {
   category: string;
   favorite: boolean;
@@ -15,7 +17,7 @@ export const FavoriteFilter = ({
       style={{ cursor: category ? "pointer" : "not-allowed" }}
     >
       <span
-        className={`filter__text ${!favorite ? "active" : ""}`}
+        className={`filter__text${!favorite ? "--active" : ""}`}
         onClick={() => {
           if (category) setFavorite(false);
         }}
@@ -27,7 +29,7 @@ export const FavoriteFilter = ({
       <span className="filter-divider">/</span>
 
       <span
-        className={`filter__text ${favorite ? "active" : ""}`}
+        className={`filter__text${favorite ? "--active" : ""}`}
         onClick={() => {
           if (category) setFavorite(true);
         }}
