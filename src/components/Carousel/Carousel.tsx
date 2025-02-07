@@ -3,6 +3,8 @@ import { ArticleCategory } from "../ArticlesCategoriesSection/articleCategory/Ar
 import { Category } from "@/lib";
 
 import "./index.css";
+import { ArrowRight } from "@/assets/ArrowRight";
+import { ArrowLeft } from "@/assets/ArrowLeft";
 
 type CarouselProps = {
   categories: Category[];
@@ -54,7 +56,7 @@ export const Carousel = ({ categories }: CarouselProps) => {
           onClick={() => scroll("left")}
           disabled={activeIndex === 0}
         >
-          ❮
+          <ArrowLeft />
         </button>
         <div className="carousel__track" ref={carouselRef}>
           {categories.map((category) => (
@@ -66,7 +68,7 @@ export const Carousel = ({ categories }: CarouselProps) => {
           onClick={() => scroll("right")}
           disabled={activeIndex === categories.length - 1}
         >
-          ❯
+          <ArrowRight />
         </button>
       </div>
     </div>
