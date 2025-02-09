@@ -1,11 +1,12 @@
 import { useScreenSize } from "@/hooks/useScreenSize";
 import "./index.css";
 import { useFilters } from "@/providers/FiltersContext";
-import { FavoriteFilter } from "../FiltersSection/components/FavoriteFilter";
+import { FavoriteFilter } from "./FavoriteFilter/FavoriteFilter";
 import { CloseIcon } from "@/assets/CloseIcon";
 
-export const FiltersSectionRefac = () => {
+export const FiltersSection = () => {
   const { isSmallDesktop, isSmallScreen } = useScreenSize();
+  const { toggleSort, sortOrder } = useFilters();
   const { category, setCategory, favorite, setFavorite } = useFilters();
 
   return (
@@ -16,7 +17,13 @@ export const FiltersSectionRefac = () => {
           {category && !isSmallScreen && (
             <>
               <div className="filters__category--active">Kategoria</div>
-              <div className="filters__clear" onClick={() => setCategory("")}>
+              <div
+                className="filters__clear"
+                onClick={() => {
+                  setCategory("");
+                  setFavorite(false);
+                }}
+              >
                 <CloseIcon />
               </div>
             </>
@@ -34,7 +41,23 @@ export const FiltersSectionRefac = () => {
             {!isSmallDesktop && (
               <div className="filters__sort-title">pokaż od: </div>
             )}
-            <div className="filters__sort-text">Najnowsze Wpisy</div>
+            <>
+              {sortOrder === "desc" ? (
+                <div
+                  className="filters__sort-text"
+                  onClick={() => toggleSort()}
+                >
+                  Najnowsze Wpisy
+                </div>
+              ) : (
+                <div
+                  className="filters__sort-text"
+                  onClick={() => toggleSort()}
+                >
+                  Najstarsze Wpisy
+                </div>
+              )}
+            </>
           </div>
         </div>
       </div>

@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 import { useParams } from "next/navigation";
 
 import "./index.css";
+import { Loading } from "@/components/Loading/Loading";
+import { ErrorMessage } from "@/components/Error/Error";
 
 const ArticlePage = () => {
   const { articleId } = useParams<{ articleId: string }>();
@@ -14,8 +16,8 @@ const ArticlePage = () => {
   const { data, loading, error } = useArticles({ id: articleId });
   const article = data as Article | null;
 
-  if (loading) return <p className="article-page__loading">Loading...</p>;
-  if (error) return <p className="article-page__error">Error: {error}</p>;
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage message={error} />;
   if (!article) return notFound();
 
   return (

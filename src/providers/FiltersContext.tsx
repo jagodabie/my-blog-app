@@ -7,8 +7,8 @@ type FilterContextType = {
   setCategory: (category: string) => void;
   favorite: boolean;
   setFavorite: (favorite: boolean) => void;
-  sort: string;
-  setSort: (sort: string) => void;
+  sortOrder: "asc" | "desc";
+  toggleSort: () => void;
 };
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined);
@@ -16,11 +16,22 @@ const FilterContext = createContext<FilterContextType | undefined>(undefined);
 export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [category, setCategory] = useState<string>("");
   const [favorite, setFavorite] = useState<boolean>(false);
-  const [sort, setSort] = useState<string>("najnowsze");
+  const [sortOrder, setSort] = useState<"asc" | "desc">("desc");
+
+  const toggleSort = () => {
+    setSort((prev) => (prev === "desc" ? "asc" : "desc"));
+  };
 
   return (
     <FilterContext.Provider
-      value={{ category, setCategory, favorite, setFavorite, sort, setSort }}
+      value={{
+        category,
+        setCategory,
+        favorite,
+        setFavorite,
+        sortOrder,
+        toggleSort,
+      }}
     >
       {children}
     </FilterContext.Provider>

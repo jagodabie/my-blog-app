@@ -3,7 +3,6 @@ span {
 }
 .article-card {
   border: var(--gray-border);
-  background: red;
   padding: 35px;
   width: 19vw;
   width: clamp(300px, 19vw, 400px);
@@ -19,6 +18,7 @@ span {
 }
 
 .article-card__category {
+  margin-bottom: 1rem;
   font-family: var(--font-family);
   font-size: 14px;
   font-style: italic;

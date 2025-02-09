@@ -1,33 +1,41 @@
 "use client";
-
-import { FiltersSection } from "../FiltersSection/FiltersSection";
-
 import "./index.css";
 import { ArticleCard } from "./ArticleCard/ArticleCard";
 import { Article } from "@/interfaces";
 import { useFilters } from "@/providers/FiltersContext";
 import { useArticles } from "@/hooks/useArticles";
-import { FiltersSectionRefac } from "../FilterRefactor/FiltersSectionRefac";
+import { FiltersSection } from "../FilterSection/FiltersSection";
+import { ElementsNotFound } from "../ElementsNotFound/ElementsNotFound";
+import { Loading } from "../Loading/Loading";
 
 export const ArticlesSection = () => {
-  const { category, favorite } = useFilters();
-  const { data, loading, error } = useArticles({ category, favorite });
+  const { category, favorite, sortOrder } = useFilters();
+  const { data, loading, error } = useArticles({
+    category,
+    favorite,
+    sortOrder,
+  });
 
-  const articles = data as Article[];
+  const articles: Article[] = Array.isArray(data) ? data : [];
 
   return (
     <div className="articles-section">
-      {/* <FiltersSection /> */}
-      <FiltersSectionRefac />
+      <FiltersSection />
       <div className="articles-container">
-        {loading && <div>Loading...</div>}
-        {error && <div>Error: {error}</div>}
-        {articles && articles.length ? (
-          articles?.map((article: Article) => (
+        {loading && <Loading />}
+        {error && (
+          <ElementsNotFound
+            message={
+              typeof error === "string" ? error : "Wystąpił nieoczekiwany błąd."
+            }
+          />
+        )}
+        {articles.length ? (
+          articles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))
         ) : (
-          <p>No articles found</p>
+          <ElementsNotFound message="Nie znaleziono artykułów spełniających kryteria wyszukiwania." />
         )}
       </div>
     </div>
