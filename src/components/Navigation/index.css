@@ -24,13 +24,13 @@ nav > h1 {
   align-items: center;
 }
 
-span {
-  display: block;
-  width: 36px;
-}
-
 .navigation {
   @media (max-width: 768px) {
     flex-direction: column;
   }
+}
+
+.navigation__icon {
+  width: 36px;
+  padding-top: 4px;
 }

@@ -1,5 +1,6 @@
 "use client";
 import { useMemo } from "react";
+
 export const useFavoriteArticles = () => {
   const favoriteIds = useMemo(() => {
     const storedFavorites = localStorage.getItem("favorites");

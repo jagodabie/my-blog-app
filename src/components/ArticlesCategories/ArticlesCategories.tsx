@@ -1,11 +1,12 @@
 import "./index.css";
-import {
-  ArticleCategory,
-  ArticleCategoryProps,
-} from "./articleCategory/ArticleCategory/ArticleCategory";
+
 import { categories } from "@/lib";
 import { useScreenSize } from "@/hooks/useScreenSize";
 import { Carousel } from "../Carousel/Carousel";
+import {
+  ArticleCategory,
+  ArticleCategoryProps,
+} from "./ArticleCategory/ArticleCategory";
 
 export const ArticlesCategories = () => {
   const { isSmallDesktop } = useScreenSize();

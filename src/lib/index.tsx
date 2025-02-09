@@ -2,7 +2,7 @@ import { BookIcon } from "@/assets/BookIcon";
 import { GlassesIcon } from "@/assets/GlassesIcon";
 import { InspirationIcon } from "@/assets/InspirationIcon";
 import { InterpretationIcon } from "@/assets/InterpretationIcon";
-import { ArticleCategoryProps } from "@/components/ArticlesCategoriesSection/articleCategory/ArticleCategory/ArticleCategory";
+import { ArticleCategoryProps } from "@/components/ArticlesCategories/ArticleCategory/ArticleCategory";
 
 export const categoriesName = [
   "Wiedza",

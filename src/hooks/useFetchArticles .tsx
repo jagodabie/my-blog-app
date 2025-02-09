@@ -1,5 +1,4 @@
 "use client";
-
 import { Article } from "@/interfaces";
 import { useState, useEffect } from "react";
 

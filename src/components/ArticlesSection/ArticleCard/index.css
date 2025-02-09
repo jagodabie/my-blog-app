@@ -54,7 +54,7 @@ span {
 }
 
 .article-card__see-more-icon {
-  padding: 2px 8px;
+  padding: 9px 8px 2px;
   transition: transform 0.3s ease-in-out;
 }
 

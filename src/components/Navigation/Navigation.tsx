@@ -18,7 +18,7 @@ export const Navigation = () => {
     <nav className="navigation">
       <div className="navigation__container">
         {pathname !== "/" && (
-          <span
+          <div
             className="navigation__icon"
             aria-label="Back"
             role="button"
@@ -27,7 +27,7 @@ export const Navigation = () => {
             onKeyDown={(e) => e.key === "Enter" && handleGoBack()}
           >
             <BackIcon />
-          </span>
+          </div>
         )}
 
         <p aria-label="Blog Edukacyjny" className="navigation__text">

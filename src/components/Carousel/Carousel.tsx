@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import { ArticleCategory } from "../ArticlesCategoriesSection/articleCategory/ArticleCategory/ArticleCategory";
 import { Category } from "@/lib";
 
 import "./index.css";
 import { ArrowRight } from "@/assets/ArrowRight";
 import { ArrowLeft } from "@/assets/ArrowLeft";
+import { ArticleCategory } from "../ArticlesCategories/ArticleCategory/ArticleCategory";
 
 type CarouselProps = {
   categories: Category[];

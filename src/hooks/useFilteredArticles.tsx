@@ -1,5 +1,4 @@
 "use client";
-
 import { useMemo } from "react";
 import { useFavoriteArticles } from "./useFavoriteArticles";
 import { Article } from "@/interfaces";
