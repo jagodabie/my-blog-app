@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export const useScreenSize = (): {
-  isMobile: boolean;
+  isSmallScreen: boolean;
   isSmallDesktop: boolean;
 } => {
   const getViewportWidth = (): number =>
@@ -11,10 +11,10 @@ export const useScreenSize = (): {
       : 0;
 
   const [screenSize, setScreenSize] = useState<{
-    isMobile: boolean;
+    isSmallScreen: boolean;
     isSmallDesktop: boolean;
   }>(() => ({
-    isMobile: getViewportWidth() < 768,
+    isSmallScreen: getViewportWidth() <= 768,
     isSmallDesktop: getViewportWidth() < 1024,
   }));
 
@@ -22,7 +22,7 @@ export const useScreenSize = (): {
     const handleResize = () => {
       const width = getViewportWidth();
       setScreenSize({
-        isMobile: width < 768,
+        isSmallScreen: width < 768,
         isSmallDesktop: width < 1024,
       });
     };

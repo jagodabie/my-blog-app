@@ -22,10 +22,10 @@ export const ArticleCard = ({ article }: { article: Article }) => {
       <p className="article-card__description">{description}</p>
       <Link href={`/${id}`} passHref>
         <div className="article-card__see-more">
-          <span className="article-card__see-more-text">zobacz więcej</span>
-          <span className="article-card__see-more-icon">
+          <div className="article-card__see-more-text">zobacz więcej</div>
+          <div className="article-card__see-more-icon">
             <ArrowIcon />
-          </span>
+          </div>
         </div>
       </Link>
     </div>

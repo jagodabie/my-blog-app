@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export const useFavorite = (articleId: number) => {
+export const useFavorite = (articleId: string) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const useFavorite = (articleId: number) => {
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
     if (favorites.includes(articleId)) {
-      favorites = favorites.filter((id: number) => id !== articleId);
+      favorites = favorites.filter((id: string) => id !== articleId);
     } else {
       favorites.push(articleId);
     }

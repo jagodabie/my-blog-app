@@ -5,14 +5,17 @@ span {
   border: var(--gray-border);
   background: red;
   padding: 35px;
-  width: 366px;
-  height: 579px;
-  width: clamp(300px, 20vw, 366px);
-  height: clamp(400px, 24vw, 579px);
+  width: 19vw;
+  width: clamp(300px, 19vw, 400px);
   border-radius: 50px 0 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.article-card__description {
+  height: 40vh;
+  overflow: hidden;
 }
 
 .article-card__category {
@@ -31,9 +34,9 @@ span {
 }
 
 .article-card__see-more-text {
-  font-size: 15.93px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 21.69px;
+  line-height: 22px;
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
@@ -41,7 +44,7 @@ span {
 }
 
 .article-card__see-more:hover .article-card__see-more-text {
-  transform: scale(1.05); /* Lekkie powiększenie czcionki */
+  transform: scale(1.05);
 }
 
 .article-card__see-more:hover {

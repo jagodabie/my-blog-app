@@ -16,8 +16,8 @@ export const FilledStarIcon = ({
         fill={fill}
         stroke={fill}
         strokeWidth="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

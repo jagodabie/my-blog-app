@@ -16,7 +16,7 @@ export const FavoriteFilter = ({
       className="favorite-filter"
       style={{ cursor: category ? "pointer" : "not-allowed" }}
     >
-      <span
+      <div
         className={`filter__text${!favorite ? "--active" : ""}`}
         onClick={() => {
           if (category) setFavorite(false);
@@ -24,11 +24,11 @@ export const FavoriteFilter = ({
         style={{ cursor: category ? "pointer" : "not-allowed" }}
       >
         Wszystkie
-      </span>
+      </div>
 
-      <span className="filter-divider">/</span>
+      <div className="filter-divider">/</div>
 
-      <span
+      <div
         className={`filter__text${favorite ? "--active" : ""}`}
         onClick={() => {
           if (category) setFavorite(true);
@@ -36,7 +36,7 @@ export const FavoriteFilter = ({
         style={{ cursor: category ? "pointer" : "not-allowed" }}
       >
         Ulubione
-      </span>
+      </div>
     </div>
   );
 };

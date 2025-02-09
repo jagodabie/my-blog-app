@@ -5,7 +5,7 @@ import "./index.css";
 import { useScreenSize } from "@/hooks/useScreenSize";
 
 export const AppHeader = () => {
-  const { isMobile } = useScreenSize();
+  const { isSmallScreen } = useScreenSize();
   return (
     <div className="app-header__wrapper">
       <div className="app-header">
@@ -17,7 +17,7 @@ export const AppHeader = () => {
           <span className="app-header__subtitle">Institute</span>
         </div>
       </div>
-      {!isMobile && <span className="app-header-breadcrumbs"> - BLOG </span>}
+      {!isSmallScreen && <div className="app-header-breadcrumbs"> - BLOG </div>}
     </div>
   );
 };

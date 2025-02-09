@@ -1,6 +1,43 @@
 .article-page__picture {
-  width: 1208px;
-  height: 680px;
   object-fit: cover;
   position: static;
+  aspect-ratio: 16 / 9;
+}
+
+.article-page {
+  padding: 4rem 9rem 0;
+  font-size: var(--font-size-h3);
+  width: 80%;
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+  }
+}
+
+.article-page__section-heading {
+  font-weight: var(--font-weight-bold);
+  font-size: 28px;
+  line-height: 38px;
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.article-page__description {
+  margin: 3rem 0;
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.article-page > h1,
+.article-page > h2 {
+  font-family: var(--font-playfair);
+}
+
+.article-page__article {
+  margin-bottom: 5rem;
 }

@@ -7,7 +7,7 @@ import { useFavorite } from "@/hooks/useFavorite";
 import "./index.css";
 
 type FavoriteProps = {
-  articleId: number;
+  articleId: string;
 };
 
 export const Favorite = ({ articleId }: FavoriteProps) => {
@@ -15,12 +15,12 @@ export const Favorite = ({ articleId }: FavoriteProps) => {
 
   return (
     <div className="favorite" onClick={toggleFavorite}>
-      <span className="favorite__icon">
+      <div className="favorite__icon">
         {isFavorite ? <FilledStarIcon /> : <StartIcon />}
-      </span>
-      <span className="favorite__text">
-        {isFavorite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
-      </span>
+      </div>
+      <div className="favorite__text">
+        {isFavorite ? "usuń z ulubionych" : "dodaj do ulubionych"}
+      </div>
     </div>
   );
 };

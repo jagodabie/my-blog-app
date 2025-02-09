@@ -7,6 +7,7 @@ import { ArticleCard } from "./ArticleCard/ArticleCard";
 import { Article } from "@/interfaces";
 import { useFilters } from "@/providers/FiltersContext";
 import { useArticles } from "@/hooks/useArticles";
+import { FiltersSectionRefac } from "../FilterRefactor/FiltersSectionRefac";
 
 export const ArticlesSection = () => {
   const { category, favorite } = useFilters();
@@ -16,8 +17,8 @@ export const ArticlesSection = () => {
 
   return (
     <div className="articles-section">
-      <FiltersSection />
-
+      {/* <FiltersSection /> */}
+      <FiltersSectionRefac />
       <div className="articles-container">
         {loading && <div>Loading...</div>}
         {error && <div>Error: {error}</div>}

@@ -1,5 +1,27 @@
 .favorite {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  width: 40%;
   margin-right: 10px;
+  gap: 21px;
+  padding-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.favorite__text {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  line-height: 24px;
+  width: 100%;
+  padding-top: 0.4rem;
+}
+
+.navigation__text {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: 44px;
+  width: 100%;
 }

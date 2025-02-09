@@ -57,9 +57,33 @@
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
-  margin: 50px 0 0 298px;
 
-  @media (max-width: 768px) {
-    margin: 0 0 50px 30px;
+  @media (max-width: 1024px) {
+    margin: 0 0 50px 0;
+    width: 100%;
+    justify-content: flex-start;
   }
+}
+
+.sort-filter {
+  margin-right: 322px;
+  margin-top: 42px;
+  margin-left: 20px;
+  display: flex;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 60px;
+    font-weight: var(--font-weight-extra-bold);
+    margin: 0;
+    display: block;
+  }
+
+  .filters__mobile {
+    padding-bottom: 54px;
+    padding-left: 40px;
+  }
+}
+
+.favorite-filter .filter-divider {
+  margin-left: 40px;
 }

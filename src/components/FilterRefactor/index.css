@@ -1,0 +1,122 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 4rem 5.5rem 3rem 7.5rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2.5rem;
+  }
+}
+
+.filters__desktop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.filters__left {
+  display: flex;
+  padding-left: 1rem;
+  width: 45%;
+
+  @media (max-width: 1024px) {
+    width: 20%;
+  }
+
+  @media (max-width: 1024px) {
+    justify-content: start;
+  }
+}
+
+.filters__right {
+  display: flex;
+  justify-content: space-between;
+  width: 51%;
+  padding-top: 1rem;
+
+  @media (max-width: 1440px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1280px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-top: 0;
+  }
+}
+
+.filters__sort {
+  display: flex;
+  font-family: var(--font-primary);
+  text-transform: none;
+  font-size: var(--font-size-extra-small);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.36; /* Instead of a fixed value of 16.34px */
+  text-align: left;
+  text-decoration: none; /* Instead of text-underline-position and text-decoration-skip-ink */
+  width: 55%;
+  padding-top: 0.6rem;
+
+  @media (max-width: 1024px) {
+    padding: 0 1rem;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.filters__sort-text {
+  padding-right: 4rem;
+  margin-left: 2rem;
+  font-weight: var(--font-weight-extra-bold);
+  border-bottom: var(--gray-border-extra-light);
+
+  width: 60%;
+
+  @media (max-width: 1024px) {
+    padding-left: 0;
+    padding-top: 0.5rem;
+    width: 70%;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.filters__sort-text {
+  border-bottom: var(--gray-border-extra-light);
+}
+
+.filters__category--active {
+  padding-left: 2rem;
+  color: var(--color-text-filter);
+  text-decoration: underline solid 20%;
+  text-underline-offset: 25%;
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.filters__clear {
+  padding-left: 0.8rem;
+}
+
+.favorite-filter-wrapper {
+  width: fit-content;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
