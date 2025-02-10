@@ -1,7 +1,6 @@
 "use client";
 
 import { Picture } from "@/components/Picture/Picture";
-import { useArticles } from "@/hooks/useArticles";
 import { Article, Section } from "@/interfaces";
 import { notFound } from "next/navigation";
 import { useParams } from "next/navigation";
@@ -9,12 +8,18 @@ import { useParams } from "next/navigation";
 import "./index.css";
 import { Loading } from "@/components/Loading/Loading";
 import { ErrorMessage } from "@/components/Error/Error";
+import { useFetchArticles } from "@/hooks/useFetchArticles ";
+import { useEffect } from "react";
 
 const ArticlePage = () => {
   const { articleId } = useParams<{ articleId: string }>();
 
-  const { data, loading, error } = useArticles({ id: articleId });
+  const { data, loading, error } = useFetchArticles(articleId);
   const article = data as Article | null;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;

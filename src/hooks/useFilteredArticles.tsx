@@ -6,18 +6,18 @@ import { Article } from "@/interfaces";
 export type FilterOptions = {
   category?: string;
   favorite?: boolean;
-  id?: string | number;
+  id?: string;
   sortOrder?: "asc" | "desc";
 };
 
 export const useFilteredArticles = (
   data: Article[] | null,
-  { category, favorite, id, sortOrder = "asc" }: FilterOptions = {}
+  { category, favorite, sortOrder = "asc" }: FilterOptions = {}
 ) => {
   const { favoriteIds } = useFavoriteArticles();
 
   const filteredData = useMemo(() => {
-    if (!data) return null;
+    if (!data) return;
 
     let filtered = [...data];
 
@@ -29,12 +29,6 @@ export const useFilteredArticles = (
       filtered = filtered.filter((item) => favoriteIds.includes(item.id));
     }
 
-    if (id) {
-      return (
-        filtered.find((item) => item.id.toString() === id.toString()) || null
-      );
-    }
-
     filtered.sort((a, b) => {
       const dateA = new Date(a.date).getTime();
       const dateB = new Date(b.date).getTime();
@@ -43,7 +37,7 @@ export const useFilteredArticles = (
     });
 
     return filtered;
-  }, [data, favorite, category, favoriteIds, id, sortOrder]);
+  }, [data, favorite, category, favoriteIds, sortOrder]);
 
   return {
     data: filteredData,

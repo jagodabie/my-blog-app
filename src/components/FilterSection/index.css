@@ -41,7 +41,6 @@
   display: flex;
   justify-content: space-between;
   width: 51%;
-  padding-top: 1rem;
 
   @media (max-width: 1440px) {
     width: 60%;
@@ -101,12 +100,22 @@
   border-bottom: var(--gray-border-extra-light);
 }
 
+.filters__category--mobile {
+  display: flex;
+  width: 100%;
+  padding-top: 1rem;
+}
+
 .filters__category--active {
   padding-left: 2rem;
   color: var(--color-text-filter);
   text-decoration: underline solid 20%;
   text-underline-offset: 25%;
   font-weight: var(--font-weight-extra-bold);
+
+  @media (max-width: 768px) {
+    padding-left: 1rem;
+  }
 }
 
 .filters__clear {

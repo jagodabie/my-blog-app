@@ -22,8 +22,16 @@ export const ArticleCategory = ({
 }: ArticleCategoryProps) => {
   const { setCategory } = useFilters();
 
+  const handleClick = () => {
+    setCategory(title);
+  };
+
   return (
-    <div className="article-category" onClick={() => setCategory(title)}>
+    <div
+      className="article-category"
+      onTouchStart={handleClick}
+      onClick={handleClick}
+    >
       <div className="article-category__image">
         <Picture src={src} priority alt={title} />
       </div>

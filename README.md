@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Aplikacja
 
-## Getting Started
+Aplikacja blogowa umożliwiająca przeglądanie postów, filtrowanie według kategorii oraz zarządzanie listą ulubionych postów.
 
-First, run the development server:
+## Technologie
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js 15**: Framework do budowy aplikacji React z obsługą renderowania po stronie serwera i statycznego generowania stron.
+- **React 19**: Biblioteka do budowy interfejsów użytkownika.
+- **TypeScript**: Język programowania będący nadzbiorem JavaScript, dodający statyczne typowanie.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funkcjonalności
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Strona Główna**: Wyświetla listę postów pobranych z API. Każdy post zawiera tytuł, krótki opis oraz przycisk "Zobacz więcej".
+- **Strona Szczegółów Posta**: Wyświetla pełną treść wybranego posta oraz przyciski powrotu do listy postów i dodania/usunięcia z ulubionych.
+- **Filtrowanie**: Użytkownik może filtrować posty na stronie głównej według kategorii oraz statusu ulubionych.
+- **Ulubione**: Użytkownik może dodawać i usuwać posty z listy ulubionych. Lista ulubionych jest przechowywana lokalnie w `localStorage`.
+- **Responsywność**: Aplikacja działa poprawnie zarówno na urządzeniach desktopowych, jak i mobilnych.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instalacja
 
-## Learn More
+### Wymagania
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (>= 14.x)
+- npm (>= 6.x)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Krok po kroku
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Sklonuj Repozytorium**
 
-## Deploy on Vercel
+    git clone <https://github.com/jagodabie/my-blog-app>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    cd my-blog-app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  **Zainstaluj Zależności**
+
+    npm install
+
+3.  **Uruchom Serwer Deweloperski**
+
+        npm run dev
+
+    Aplikacja zostanie uruchomiona na <http://localhost:3000>.

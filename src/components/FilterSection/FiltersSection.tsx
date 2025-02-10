@@ -2,7 +2,7 @@ import { useScreenSize } from "@/hooks/useScreenSize";
 import "./index.css";
 import { useFilters } from "@/providers/FiltersContext";
 import { FavoriteFilter } from "./FavoriteFilter/FavoriteFilter";
-import { CloseIcon } from "@/assets/CloseIcon";
+import CategoryFilter from "./CategoryFilter/CategoryFilter";
 
 export const FiltersSection = () => {
   const { isSmallDesktop, isSmallScreen } = useScreenSize();
@@ -15,18 +15,11 @@ export const FiltersSection = () => {
         <div className="filters__left">
           <h2 className="filters__header">Wpisy</h2>
           {category && !isSmallScreen && (
-            <>
-              <div className="filters__category--active">Kategoria</div>
-              <div
-                className="filters__clear"
-                onClick={() => {
-                  setCategory("");
-                  setFavorite(false);
-                }}
-              >
-                <CloseIcon />
-              </div>
-            </>
+            <CategoryFilter
+              category={category}
+              setCategory={setCategory}
+              setFavorite={setFavorite}
+            />
           )}
         </div>
         <div className="filters__right">
@@ -61,11 +54,21 @@ export const FiltersSection = () => {
           </div>
         </div>
       </div>
+
       {isSmallDesktop && (
         <div className="favorite-filter-wrapper">
           <FavoriteFilter
             category={category}
             favorite={favorite}
+            setFavorite={setFavorite}
+          />
+        </div>
+      )}
+      {category && isSmallScreen && (
+        <div className="filters__category--mobile">
+          <CategoryFilter
+            category={category}
+            setCategory={setCategory}
             setFavorite={setFavorite}
           />
         </div>

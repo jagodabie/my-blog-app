@@ -2,7 +2,7 @@
 import { Article } from "@/interfaces";
 import { useState, useEffect } from "react";
 
-export const useFetchArticles = () => {
+export const useFetchArticles = (id: string) => {
   const [data, setData] = useState<Article[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +14,9 @@ export const useFetchArticles = () => {
 
       try {
         const response = await fetch(
-          "https://my-json-server.typicode.com/jagodabie/server/posts"
+          `https://my-json-server.typicode.com/jagodabie/server/posts/${
+            id ? id : ""
+          }`
         );
 
         if (!response.ok) {
